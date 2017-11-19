@@ -36,24 +36,34 @@ window.addEventListener('load', function() {
       $('#counter').html(newCharacters); // Utilizando el método html para establecer a mi etiqueta label cuyo valor de su atributo ID es counter, el valor de la variable newCharacters.
 
       if (newCharacters <= 140 && newCharacters >= 20) { // Esta condición se cumple cuando no se ha pasado de los 120 caracteres.
-        $('#counter').removeClass('not-many');
+        $('#counter').addClass('allowed'); // El método addClass me permite añadirle clases a la etiqueta label.
+        // Remuevo las clases restantes para que cuando quiera borrar caracteres, cambien de estilo según el número de caracteres y no se 'estanquen' en el último estilo aplicado.
+        $('#counter').removeClass('not-many'); 
         $('#counter').removeClass('warning');
         $('#counter').removeClass('negative');
+        $(button).removeAttr('disabled', 'true'); // Este método me permite asignrle al botón el atributo disabled(deshabilitado en español)al button cuyo valor es true para que lo deshabilite.
+        $(button).removeClass('disabled'); 
       } else if (newCharacters < 20 && newCharacters >= 10) { // Esta condición se cumple cuando se ha pasado de los 120 caracteres, pero no de los 130.
         $('#counter').addClass('not-many');
         $('#counter').removeClass('allowed');
         $('#counter').removeClass('warning');
         $('#counter').removeClass('negative');
+        $(button).removeAttr('disabled', 'true'); 
+        $(button).removeClass('disabled'); 
       } else if (newCharacters < 10 && newCharacters >= 0) { // Esta condición se cumple cuando se ha pasado de los 130 caracteres, pero no de los 140.
         $('#counter').addClass('warning');
         $('#counter').removeClass('allowed');
         $('#counter').removeClass('not-many');
         $('#counter').removeClass('negative');
+        $(button).removeAttr('disabled', 'true');
+        $(button).removeClass('disabled');  
       } else { // Esta condición se cumple cuando se ha pasado de los 140 caracteres.
         $('#counter').addClass('negative');
         $('#counter').removeClass('warning');
         $('#counter').removeClass('allowed');
         $('#counter').removeClass('not-many');
+        $(button).attr('disabled', 'true');
+        $(button).addClass('disabled'); 
       }
     });
   });
