@@ -1,8 +1,11 @@
 /* Colores a usar:
    Color de background: 13BEEC;
    Color de título: #FFF;
-   Azul oscuro: #1F618D
-   Plomizo claro: #EFEFEF
+   Azul oscuro(color para cierto texto y para la clase allowed): #1F618D;
+   Plomizo claro: #EFEFEF;
+   Color not-many: #FFD433; 
+   Color warning: #9A0318;
+   Color negative:  #F00;
 */
 
 /* Estilos generales */
@@ -127,11 +130,25 @@
   
   #counter {
     font-size: 1.9em;
-    color: #1F618D;
     float: right;
-    
+  }
+
+  .negative {
+    color: #F00;
   }
   
+  .warning {
+    color: #9A0318;
+  }
+
+  .not-many {
+    color: #FFD433;
+  }
+
+  .allowed {
+    color: #1F618D;
+  }
+
   button {
     border: none;
     outline: 0;

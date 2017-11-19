@@ -33,7 +33,28 @@ window.addEventListener('load', function() {
     // Estableciendo el evento keyup a mi etiqueta textarea cuyo valor de su atributo ID es comment.
     $('#comment').keyup(function numberOfCharactersEntered() {
       var newCharacters = maxLength - $('#comment').val().length; // Estableciendo como valor a la variable newCharacters la resta entre el número máximo de caracteres aceptados y el número de caracteres ingresados hasta el momento .
-      $('#counter').html(newCharacters); // Utilizando el método html para establecer a mi etiqueta label cuyo valor de su atributo ID es counter, el valor de la variable newCharacters
+      $('#counter').html(newCharacters); // Utilizando el método html para establecer a mi etiqueta label cuyo valor de su atributo ID es counter, el valor de la variable newCharacters.
+
+      if (newCharacters <= 140 && newCharacters >= 20) { // Esta condición se cumple cuando no se ha pasado de los 120 caracteres.
+        $('#counter').removeClass('not-many');
+        $('#counter').removeClass('warning');
+        $('#counter').removeClass('negative');
+      } else if (newCharacters < 20 && newCharacters >= 10) { // Esta condición se cumple cuando se ha pasado de los 120 caracteres, pero no de los 130.
+        $('#counter').addClass('not-many');
+        $('#counter').removeClass('allowed');
+        $('#counter').removeClass('warning');
+        $('#counter').removeClass('negative');
+      } else if (newCharacters < 10 && newCharacters >= 0) { // Esta condición se cumple cuando se ha pasado de los 130 caracteres, pero no de los 140.
+        $('#counter').addClass('warning');
+        $('#counter').removeClass('allowed');
+        $('#counter').removeClass('not-many');
+        $('#counter').removeClass('negative');
+      } else { // Esta condición se cumple cuando se ha pasado de los 140 caracteres.
+        $('#counter').addClass('negative');
+        $('#counter').removeClass('warning');
+        $('#counter').removeClass('allowed');
+        $('#counter').removeClass('not-many');
+      }
     });
   });
 });
