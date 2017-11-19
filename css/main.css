@@ -2,10 +2,11 @@
    Color de background: 13BEEC;
    Color de título: #FFF;
    Azul oscuro(color para cierto texto y para la clase allowed): #1F618D;
-   Plomizo claro: #EFEFEF;
    Color not-many: #FFD433; 
    Color warning: #9A0318;
    Color negative:  #F00;
+   Plomizo claro(para la línea horizontal del primer div y el color de fondo del button cuando está deshabilitado): #EFEFEF
+   Color de texto del button cuando está deshabilitado: #A6ACAF
 */
 
 /* Estilos generales */

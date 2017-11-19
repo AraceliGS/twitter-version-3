@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
         $('#counter').removeClass('not-many'); 
         $('#counter').removeClass('warning');
         $('#counter').removeClass('negative');
-        $(button).removeAttr('disabled', 'true'); // Este método me permite asignrle al botón el atributo disabled(deshabilitado en español)al button cuyo valor es true para que lo deshabilite.
+        $(button).removeAttr('disabled', 'true'); // Este método me permite asignarle al botón el atributo disabled(deshabilitado en español)al button cuyo valor es true para que lo deshabilite.
         $(button).removeClass('disabled'); 
       } else if (newCharacters < 20 && newCharacters >= 10) { // Esta condición se cumple cuando se ha pasado de los 120 caracteres, pero no de los 130.
         $('#counter').addClass('not-many');
@@ -62,8 +62,8 @@ window.addEventListener('load', function() {
         $('#counter').removeClass('warning');
         $('#counter').removeClass('allowed');
         $('#counter').removeClass('not-many');
-        $(button).attr('disabled', 'true');
-        $(button).addClass('disabled'); 
+        $(button).attr('disabled', 'true'); 
+        $(button).addClass('disabled'); //  El método addClass me permite añadirle la clase disabled a la etiqueta button.
       }
     });
   });
