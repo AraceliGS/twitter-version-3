@@ -1,4 +1,4 @@
-// Para que estos eventos ocurran cuando la página haya cargado completamente, uso el evento load
+// Para que estos eventos ocurran cuando la página haya cargado completamente, uso el evento load.
 
 window.addEventListener('load', function() {
   // Utilizo este método para que obtenga el primer valor cuyo selector de etiqueta sea button(botón).
@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
   var textarea = document.getElementById('comment'); 
   // El label ahora se le selecciona mediante su ID para utilizarlo en la función realizada con jQuery más abajo.
   var label = document.getElementById('counter');
-  // Estableciendo el evento click al elemento button
+  // Estableciendo el evento click al elemento button.
   button.addEventListener('click', function() {
     // Condición if else que me permitirá habilitar y desabilitar mi botón dependiendo si tienen contenido o no. 
     if (textarea.value !== '') { // Todo lo que está contenido en el if ocurrirá si es hay algo escrito en el textarea.
@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
       var text = document.createTextNode(message); // Creando un nodo de texto cuyo contenido es el valor de la variable message.
       div.appendChild(text); // Uniendo al nodo de texto 'text' con el nodo de tipo elemento div.
       sectionDivs.appendChild(div); // Uniendo al nodo de tipo elemento div con el nodo de tipo elemento section, para que el div sea contenido dentro de la sección.
-      div.classList.add('divText'); // AñadiendOle al div la clase divText(ver CSS).
+      div.classList.add('divText'); // Añadiendole al div la clase divText(ver CSS).
     } else { // Si no hay nada escrito en el textarea ...
       button.setAttribute('disabled', 'true'); // Le asignamos el atributo disabled(deshabilitado en español)al button cuyo valor es true para que lo deshabilite.
     }
